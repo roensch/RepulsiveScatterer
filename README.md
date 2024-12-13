@@ -3,7 +3,7 @@
 A Matlab library for iteratively solving the three-dimensional acoustic inverse obstacle scattering problem, where the tangent-point energy is used for regularization.
 
 # Download/Installation
-The library offers a mex-inclusion of the forward solver _BAEMM_ (git@github.com:HenrikSchumacher/BAEMM.git) and the tangent-point energy library _Repulsor_ (git@github.com:HenrikSchumacher/Repulsor.git).
+The library offers a mex-inclusion of the forward solver _BAEMM_ (https://github.com/HenrikSchumacher/BAEMM) and the tangent-point energy library _Repulsor_ (https://github.com/HenrikSchumacher/Repulsor ).
 For installation, run
     git clone --recursive-submodules
 or clone as usual and run
