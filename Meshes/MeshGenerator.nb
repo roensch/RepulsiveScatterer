@@ -1,0 +1,189 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6172,        181]
+NotebookOptionsPosition[      5508,        163]
+NotebookOutlinePosition[      5942,        180]
+CellTagsIndexPosition[      5899,        177]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["Exit"], "Input",
+ CellChangeTimes->{{3.874760451429117*^9, 3.87476045189067*^9}},
+ CellLabel->
+  "In[337]:=",ExpressionUUID->"3e65e8f1-da3f-456b-b5f3-e95ec9fce5c3"],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<PM`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LoadPackages", "[", "\"\<Geometries\>\"", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8747604120371637`*^9, 3.874760425272643*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"96d3d3fb-98d3-4c52-93cd-9a9701ab9cf5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"toMatlab", "[", 
+    RowBox[{"name_", ",", "M_mesh"}], "]"}], ":=", 
+   RowBox[{"Export", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+        RowBox[{"name", "<>", "\"\<_\>\"", "<>", 
+         RowBox[{"IntegerString", "[", 
+          RowBox[{
+           RowBox[{"SimplexCount", "[", "M", "]"}], ",", "10", ",", "8"}], 
+          "]"}], "<>", "\"\<.mat\>\""}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"VertexCoordinates", "[", "M", "]"}], ",", 
+       RowBox[{"Simplices", "[", "M", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8747645153713284`*^9, 3.874764558358886*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"946c9a97-33e8-476a-af60-42ecd0af1c93"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{"toMatlab", "[", 
+     RowBox[{"\"\<Triceratops\>\"", ",", 
+      RowBox[{"TriceratopsMesh", "[", "k", "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "3"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{"toMatlab", "[", 
+     RowBox[{"\"\<DiskMesh\>\"", ",", 
+      RowBox[{"DiskMesh", "[", 
+       RowBox[{"16", " ", 
+        RowBox[{"2", "^", "k"}]}], "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "6"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{"toMatlab", "[", 
+     RowBox[{"\"\<Spot\>\"", ",", 
+      RowBox[{"SpotSurface", "[", "k", "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "3"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{"toMatlab", "[", 
+     RowBox[{"\"\<Bob\>\"", ",", 
+      RowBox[{"BobSurface", "[", "k", "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "3"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{"toMatlab", "[", 
+     RowBox[{"\"\<Blub\>\"", ",", 
+      RowBox[{"BlubSurface", "[", "k", "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "3"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{"toMatlab", "[", 
+     RowBox[{"\"\<Sphere\>\"", ",", 
+      RowBox[{"SphereMesh", "[", "k", "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "7"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{"toMatlab", "[", 
+     RowBox[{"\"\<Torus\>\"", ",", 
+      RowBox[{"TorusMesh", "[", 
+       RowBox[{"3", ",", "1", ",", 
+        RowBox[{"Mesh", "->", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"30", ",", "10"}], "}"}], 
+          RowBox[{"2", "^", "k"}]}]}]}], "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "5"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"toMatlab", "[", 
+   RowBox[{"\"\<TrefoilTunnel\>\"", ",", 
+    RowBox[{"ToMesh", "[", 
+     RowBox[{
+     "Import", "[", 
+      "\"\</Users/Henrik/Dropbox/Mathematica/PackageSources/Mesh/Geometries/\
+TrefoilTunnel31k.obj\>\"", "]"}], "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"name", "=", "\"\<Genus2Knotted\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{"toMatlab", "[", 
+     RowBox[{"\"\<Genus2Knotted\>\"", ",", 
+      RowBox[{"ToMesh", "@", 
+       RowBox[{"Import", "[", "file", "]"}]}]}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"file", ",", 
+      RowBox[{
+      "FileNames", "[", 
+       "\"\</Users/Henrik/Dropbox/Mathematica/PackageSources/Mesh/\
+KnottedSurfaceData/*.obj\>\"", "]"}]}], "}"}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8747608332707577`*^9, 3.8747608407706547`*^9}, {
+  3.8747644715791483`*^9, 3.874764473767434*^9}, {3.874764537869739*^9, 
+  3.874764568384128*^9}, {3.8747646017023697`*^9, 3.874764663370822*^9}, {
+  3.8747647224607973`*^9, 3.874764733815859*^9}, {3.8749996405675097`*^9, 
+  3.874999653361223*^9}, {3.874999693800383*^9, 
+  3.8749996962427197`*^9}},ExpressionUUID->"dd5c9d9a-8ac7-4274-9a1f-\
+7460a6eb3ed8"]
+},
+WindowSize->{1496, 905},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"8725e059-c1e9-4a07-8c04-c5d3ac927a38"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 178, 3, 33, "Input",ExpressionUUID->"3e65e8f1-da3f-456b-b5f3-e95ec9fce5c3"],
+Cell[739, 25, 317, 5, 55, "Input",ExpressionUUID->"96d3d3fb-98d3-4c52-93cd-9a9701ab9cf5"],
+Cell[1059, 32, 930, 23, 97, "Input",ExpressionUUID->"946c9a97-33e8-476a-af60-42ecd0af1c93"],
+Cell[1992, 57, 3512, 104, 244, "Input",ExpressionUUID->"dd5c9d9a-8ac7-4274-9a1f-7460a6eb3ed8"]
+}
+]
+*)
+
