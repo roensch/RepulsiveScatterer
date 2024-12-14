@@ -6,7 +6,7 @@ We offer a pre-included forward solver for the _homogeneous Dirichlet boundary v
 
 # Download/Installation
 
-The library offers a mex-inclusion of the forward solver _BÄMM_ (https://github.com/HenrikSchumacher/BAEMM) and the tangent-point energy library _Repulsor_ (https://github.com/HenrikSchumacher/Repulsor ).
+The library offers a mex-inclusion of the C++-based forward solver _BÄMM_ (https://github.com/HenrikSchumacher/BAEMM) and the tangent-point energy library _Repulsor_ (https://github.com/HenrikSchumacher/Repulsor ).
 For installation, run
 
     git clone --recursive-submodules
