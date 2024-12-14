@@ -15,7 +15,7 @@ or clone as usual and run
 
     git submodule update --init --recursive 
     
-To use both, the .cpp-files in "Forward_Problem/BAEMM_Matlab" and "Forward_Problem/Repulsor_Matlab" need to be mex-compiled. Exemplary compilation files for compilation on MacOS are provided. Beforehand, check the requirements for the submodule libraries which can be found in the respective README files (_Repulsor_ and _BÄMM_ require openblas, LAPACK and OpenCL to be installed). Also note that your Matlab version needs to support a compiler which itself at least supports C++20. For further details to get those libraries working we refer to their respective README-files.
+To use both, the .cpp-files in "Forward_Problem/BAEMM_Matlab" and "Forward_Problem/Repulsor_Matlab" need to be mex-compiled. Exemplary compilation files for compilation on MacOS are provided. Beforehand, check the requirements for the submodule libraries (_Repulsor_ and _BÄMM_ require openblas, LAPACK and OpenCL to be installed). Also note that your Matlab version needs to support a compiler which itself at least supports C++20. For further details to get those libraries working we refer to their respective README-files.
 
 Alternatively, you can use your own forward solver, just include it in "Forward_Problem/DirichletTri.m".
 
