@@ -14,12 +14,15 @@
 // Enable profiling
 
 #define LAPACK_DISABLE_NAN_CHECK
-#define ACCELERATE_NEW_LAPACK
+
+#define ACCELERATE_NEW_LAPACK /* Use new LAPACK version. */
+// #define TENSORS_USE_ACCELERATE_OLD_LAPACK /* Use old LAPACK version. */
+
+// #define REPULSOR_USE_AMD /* Use if suite-sparse is installed on AMD architecture. Then use linker flag ' -lamd'. */
+
 #include <Accelerate/Accelerate.h>
 
-#define TOOLS_DEBUG
-#define TOOLS_ENABLE_PROFILER
-
+#include "submodules/Tensors/Accelerate.hpp"
 #include "Repulsor.hpp"
 
 using namespace Tools;

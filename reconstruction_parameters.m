@@ -267,7 +267,7 @@ function [prbl,reg] = reconstruction_parameters(experiment,save_flag)
     reg.method = 'GaussNewton';
     
     % set maximal iterations and discrepancy parameter
-    reg.stoprule_par = struct('N_max_it',100,'tau',20);
+    reg.stoprule_par = struct('N_max_it',100,'tau',3);
     reg.verbose = 2;
     
     %% Set saving path if requested

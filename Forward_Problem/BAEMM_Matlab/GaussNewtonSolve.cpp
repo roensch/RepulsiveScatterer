@@ -7,8 +7,12 @@
 #include <pwd.h>
 #include <filesystem>
 
+#define LAPACK_DISABLE_NAN_CHECK
 
-#define TOOLS_ENABLE_PROFILER
+#define ACCELERATE_NEW_LAPACK /* Use new LAPACK version. */
+// #define TENSORS_USE_ACCELERATE_OLD_LAPACK /* Use old LAPACK version. */
+
+// #define REPULSOR_USE_AMD /* Use if suite-sparse is installed on AMD architecture. Then use linker flag ' -lamd'. */
 
 #include "Helmholtz_OpenCL.hpp"
 
