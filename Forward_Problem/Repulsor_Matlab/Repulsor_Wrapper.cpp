@@ -22,7 +22,12 @@
 
 #include <Accelerate/Accelerate.h>
 
-#include "submodules/Tensors/Accelerate.hpp"
+#ifdef __APPLE__
+    #include "submodules/Tensors/Accelerate.hpp"
+#else
+    #include "submodules/Tensors/OpenBLAS.hpp"
+#endif
+
 #include "Repulsor.hpp"
 
 using namespace Tools;

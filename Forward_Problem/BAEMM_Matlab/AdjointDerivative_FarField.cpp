@@ -15,8 +15,6 @@
 
 // #define REPULSOR_USE_AMD /* Use if suite-sparse is installed on AMD architecture. Then use linker flag ' -lamd'. */
 
-#include <Accelerate/Accelerate.h>
-
 #include "Helmholtz_OpenCL.hpp"
 
 using namespace Tools;
