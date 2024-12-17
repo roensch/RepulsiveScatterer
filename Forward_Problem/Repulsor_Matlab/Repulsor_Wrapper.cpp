@@ -15,15 +15,13 @@
 
 #define LAPACK_DISABLE_NAN_CHECK
 
-#define ACCELERATE_NEW_LAPACK /* Use new LAPACK version. */
-// #define TENSORS_USE_ACCELERATE_OLD_LAPACK /* Use old LAPACK version. */
-
 // #define REPULSOR_USE_AMD /* Use if suite-sparse is installed on AMD architecture. Then use linker flag ' -lamd'. */
 
-#include <Accelerate/Accelerate.h>
-
 #ifdef __APPLE__
-    #include "submodules/Tensors/Accelerate.hpp"
+     #define ACCELERATE_NEW_LAPACK /* Use new LAPACK version. */
+//      #define TENSORS_USE_ACCELERATE_OLD_LAPACK /* Use old LAPACK version. */
+
+     #include "submodules/Tensors/Accelerate.hpp"
 #else
     #include "submodules/Tensors/OpenBLAS.hpp"
 #endif
