@@ -15,10 +15,19 @@ or clone as usual and run
 
     git submodule update --init --recursive 
     
-To use both, the .cpp-files in "Forward_Problem/BAEMM_Matlab" and "Forward_Problem/Repulsor_Matlab" need to be mex-compiled. Exemplary compilation files for compilation on MacOS are provided. Beforehand, check the requirements for the submodule libraries (_Repulsor_ and _BÄMM_ require openblas, LAPACK and OpenCL to be installed). The compilation of the MEX-files is tested only on MacOS. On other sytems, one might need to link the Matlab-intern OpenBLAS- and LAPACK-implementations instead of the standard ones (with -lmwblas and -lmwlapack).
+To use the C++ libraries, the .cpp-files in the folders "Forward_Problem/BAEMM_Matlab" and "Forward_Problem/Repulsor_Matlab" need to be mex-compiled. Exemplary compilation files for compilation on MacOS are provided. Beforehand, check the requirements for the submodule libraries in the respective README files (_Repulsor_ and _BÄMM_ require openblas, LAPACK and OpenCL to be installed). The compilation of the mex-files is tested only on MacOS in the Accelerate framework and with OpenBLAS. In the latter, the problem may occur that Matlab tries to load their own LAPACK installation. This leads to a compilation error. As a workaround, one may either fix the order of the include paths in the mex-compilation files of the Matlab installation or replace in "./submodules/Repulsor/submodules/Tensors/OpenBLAS.hpp"
+
+#include<lapack.h>
+
+with
+
+#include<_(openblaspath)_/lapack.h>
+
+And also replace the "-framework Accelerate" flag in the compile files by "-I _(openblaspath)_", "-L _(openblaspath)_" and "-lopenblas".
+
 Also note that your Matlab version needs to support a compiler which itself at least supports C++20. For further details to get those libraries working we refer to their respective README-files.
 
-Alternatively, you can use your own forward solver, just include it in "Forward_Problem/DirichletTri.m".
+Alternatively, you can use your own forward solver, just include it yourself in "Forward_Problem/DirichletTri.m".
 
 # Run examples
 
