@@ -1,0 +1,3 @@
+[submodule "submodules/BAEMM"]
+	path = submodules/BAEMM
+	url = git@github.com:HenrikSchumacher/BAEMM.git
